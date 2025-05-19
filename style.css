@@ -1,0 +1,73 @@
+* {
+font-family: "Source Code Pro", monospace;
+font-size: 12pt;
+border: none;
+box-shadow: none;
+}
+
+window#waybar {
+  background-color: #282A2E;
+  color: #C5C8C6;
+  border-radius: 5px;
+}
+
+#pulseaudio,
+#memory,
+#cpu,
+#clock,
+#disk {
+padding: 0 10px;
+}
+
+#pulseaudio {
+color: #F0C674;
+}
+
+#memory {
+color: #F0C674;
+}
+
+#wlr-taskbar {
+color: #C5C8C6;
+margin: 0 10px;
+}
+
+#wlr-taskbar button.active {
+background: #373B41;
+border-bottom: 2px solid #F0C674;
+color: #F0C674;
+}
+
+#wlr-taskbar button {
+padding: 0 6px;
+background: transparent;
+border: none;
+}
+
+#cpu {
+color: #F0C674;
+}
+
+#clock {
+color: #8ABEB7;
+}
+
+#disk {
+color: #F0C674;
+}
+
+#sni {
+background: transparent;
+padding: 0 10px;
+}
+
+#sni button {
+background: transparent;
+border: none;
+padding: 0 5px;
+}
+
+#sni button:hover {
+background: #44475a;
+border-radius: 3px;
+}

@@ -1,77 +1,76 @@
-#
-# Мінімальний робочий конфіг Sway
-# Українською, з підтримкою konsole, waybar, nm-applet
-#
+{
+  "layer": "top",
+  "position": "top",
+  "height": 24,
+  "margin": 0,
+  "modules-left": ["wlr/workspaces"],
+  "modules-center": ["wlr/taskbar"],
+  "modules-right": [
+    "filesystem",
+    "pulseaudio",
+    "keyboard-state",
+    "memory",
+    "cpu",
+    "sni",
+    "clock"
+  ],
 
-### Клавіша-модифікатор (Super/Windows)
-set $mod Mod4
+  "wlr/workspaces": {
+    "format": "{icon}",
+    "on-click": "activate",
+    "format-icons": {
+      "default": "",
+      "focused": "",
+      "urgent": ""
+    }
+  },
 
-output * bg /home/whoami/Wallpaper/mountain.png fill
+  "wlr/taskbar": {
+    "format": "{}",
+    "tooltip-format": "{}",
+    "on-click": "activate",
+    "on-click-middle": "close",
+    "icon-theme": "Papirus",
+    "ignore-list": ["plasmashell", "krunner", "latte-dock"]
+  },
 
-### Термінал (заміни на інший, якщо треба)
-set $term konsole
+  "filesystem": {
+    "path": "/",
+    "format": " {percentage_used}%"
+  },
 
-### Відкрити термінал
-bindsym $mod+Return exec $term
+  "pulseaudio": {
+    "format": " {volume}%",
+    "format-muted": " muted"
+  },
 
-### Меню програм (wofi або rofi, якщо встановлено)
-set $menu wofi --show drun
-bindsym $mod+d exec $menu
+  "keyboard-state": {
+    "numlock": true,
+    "capslock": true,
+    "format": " {name} {icon}",
+    "format-icons": {
+      "locked": "",
+      "unlocked": ""
+    }
+  },
 
-### Перезавантаження/вихід
-bindsym $mod+Shift+c reload
-bindsym $mod+Shift+r restart
-bindsym $mod+Shift+e exit
+  "memory": {
+    "interval": 5,
+    "format": " {percentage}%"
+  },
 
-### Закрити вікно
-bindsym $mod+Shift+q kill
+  "cpu": {
+    "interval": 2,
+    "format": "󰻠 {usage}%"
+  },
 
-### Робочі простори
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
-set $ws4 "4"
-set $ws5 "5"
-bindsym $mod+1 workspace $ws1
-bindsym $mod+2 workspace $ws2
-bindsym $mod+3 workspace $ws3
-bindsym $mod+4 workspace $ws4
-bindsym $mod+5 workspace $ws5
+  "clock": {
+    "interval": 1,
+    "format": " {:%H:%M}"
+  },
 
-### Переміщення між вікнами
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
-
-### Переміщення вікон
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
-
-### Повноекранний режим
-bindsym $mod+f fullscreen toggle
-
-### Розмір вікон (режим resize)
-mode "resize" {
-    bindsym h resize shrink width 10 px or 10 ppt
-    bindsym j resize grow height 10 px or 10 ppt
-    bindsym k resize shrink height 10 px or 10 ppt
-    bindsym l resize grow width 10 px or 10 ppt
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
+  "sni": {
+    "icon-size": 16,
+    "spacing": 5
+  }
 }
-bindsym $mod+r mode "resize"
-
-### Курсор
-seat * xcursor_theme Adwaita 24
-
-### Фон (заміни шлях, якщо хочеш власну картинку)
-output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
-
-### Автозапуск (залишай тільки, якщо ці програми встановлені)
-exec waybar
-exec nm-applet
-
-# Кінець конфігу
