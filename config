@@ -1,0 +1,77 @@
+#
+# Мінімальний робочий конфіг Sway
+# Українською, з підтримкою konsole, waybar, nm-applet
+#
+
+### Клавіша-модифікатор (Super/Windows)
+set $mod Mod4
+
+output * bg /home/whoami/Wallpaper/mountain.png fill
+
+### Термінал (заміни на інший, якщо треба)
+set $term konsole
+
+### Відкрити термінал
+bindsym $mod+Return exec $term
+
+### Меню програм (wofi або rofi, якщо встановлено)
+set $menu wofi --show drun
+bindsym $mod+d exec $menu
+
+### Перезавантаження/вихід
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+bindsym $mod+Shift+e exit
+
+### Закрити вікно
+bindsym $mod+Shift+q kill
+
+### Робочі простори
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+
+### Переміщення між вікнами
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+### Переміщення вікон
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+### Повноекранний режим
+bindsym $mod+f fullscreen toggle
+
+### Розмір вікон (режим resize)
+mode "resize" {
+    bindsym h resize shrink width 10 px or 10 ppt
+    bindsym j resize grow height 10 px or 10 ppt
+    bindsym k resize shrink height 10 px or 10 ppt
+    bindsym l resize grow width 10 px or 10 ppt
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+r mode "resize"
+
+### Курсор
+seat * xcursor_theme Adwaita 24
+
+### Фон (заміни шлях, якщо хочеш власну картинку)
+output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+
+### Автозапуск (залишай тільки, якщо ці програми встановлені)
+exec waybar
+exec nm-applet
+
+# Кінець конфігу
