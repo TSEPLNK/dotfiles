@@ -1,6 +1,6 @@
 * {
-font-family: "Source Code Pro", monospace;
-font-size: 12pt;
+font-family: "Source Code Pro SemiBold", monospace;
+font-size: 14pt;
 border: none;
 box-shadow: none;
 }
@@ -14,21 +14,28 @@ window#waybar {
 #pulseaudio,
 #memory,
 #cpu,
-#clock,
-#disk {
+#clock {
 padding: 0 10px;
 }
 
 #pulseaudio {
-color: #F0C674;
+color: #9315d4;
 }
 
 #memory {
-color: #F0C674;
+color: #9315d4;
+}
+
+#keyboard-state {
+color: #9315d4;
+}
+
+#wlr-workspaces {
+margin-left: 10px;
 }
 
 #wlr-taskbar {
-color: #C5C8C6;
+color: #9315d4;
 margin: 0 10px;
 }
 
@@ -45,29 +52,27 @@ border: none;
 }
 
 #cpu {
-color: #F0C674;
+color: #9315d4;
 }
 
 #clock {
 color: #8ABEB7;
 }
 
-#disk {
-color: #F0C674;
-}
-
-#sni {
+/* Стилі для system tray */
+#tray {
 background: transparent;
+color: #C5C8C6;
 padding: 0 10px;
 }
 
-#sni button {
+#tray > .tray-item {
 background: transparent;
 border: none;
 padding: 0 5px;
 }
 
-#sni button:hover {
+#tray > .tray-item:hover {
 background: #44475a;
 border-radius: 3px;
 }

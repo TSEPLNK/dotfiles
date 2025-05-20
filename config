@@ -1,9 +1,9 @@
 {
   "layer": "top",
   "position": "top",
-  "height": 24,
+  "height": 30,
   "margin": 0,
-  "modules-left": ["wlr/workspaces"],
+  "modules-left": ["sway/workspaces", "sway/keyboard-state"],
   "modules-center": ["wlr/taskbar"],
   "modules-right": [
     "filesystem",
@@ -11,11 +11,11 @@
     "keyboard-state",
     "memory",
     "cpu",
-    "sni",
+    "tray",
     "clock"
   ],
 
-  "wlr/workspaces": {
+  "sway/workspaces": {
     "format": "{icon}",
     "on-click": "activate",
     "format-icons": {
@@ -27,6 +27,7 @@
 
   "wlr/taskbar": {
     "format": "{}",
+    "all-workspaces": false,
     "tooltip-format": "{}",
     "on-click": "activate",
     "on-click-middle": "close",
@@ -44,7 +45,7 @@
     "format-muted": " muted"
   },
 
-  "keyboard-state": {
+  "sway/keyboard-state": {
     "numlock": true,
     "capslock": true,
     "format": " {name} {icon}",
@@ -69,8 +70,9 @@
     "format": " {:%H:%M}"
   },
 
-  "sni": {
+  "tray": {
     "icon-size": 16,
     "spacing": 5
   }
 }
+
