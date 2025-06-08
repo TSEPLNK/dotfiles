@@ -1,14 +1,14 @@
 * {
 font-family: "Source Code Pro SemiBold", monospace;
-font-size: 14pt;
+font-size: 10pt;
 border: none;
 box-shadow: none;
 }
 
 window#waybar {
-  background-color: #282A2E;
-  color: #C5C8C6;
-  border-radius: 5px;
+    background-color: #373c45;
+    color: #373c45;
+    border-radius: 5px;
 }
 
 #pulseaudio,
@@ -19,19 +19,26 @@ padding: 0 10px;
 }
 
 #pulseaudio {
-color: #9315d4;
+color: #db0f68;
 }
 
 #memory {
-color: #9315d4;
+color: #db0f68;
 }
 
 #keyboard-state {
 color: #9315d4;
 }
 
-#wlr-workspaces {
-margin-left: 10px;
+#workspaces button.active {
+    border-bottom: 2px solid #7aa2f7; /* Колір і товщина підкреслення */
+    border-radius: 0;
+    padding-bottom: 4px;
+    /* Можна додати інший фон/колір тексту, якщо треба */
+}
+
+#workspaces button:hover {
+    background: #24283b;
 }
 
 #wlr-taskbar {
@@ -52,11 +59,11 @@ border: none;
 }
 
 #cpu {
-color: #9315d4;
+color: #db0f68;
 }
 
 #clock {
-color: #8ABEB7;
+color: #11def5;
 }
 
 /* Стилі для system tray */

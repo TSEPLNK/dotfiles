@@ -1,0 +1,70 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 30,
+    "margin": 0,
+    "modules-left": ["hyprland/workspaces", "date"],
+    "modules-center": ["clock"],
+    "modules-right": [
+        "filesystem",
+        "pulseaudio",
+        "memory",
+        "cpu",
+        "tray"
+    ],
+
+    "hyprland/workspaces": {
+        "format": "{name}",
+        "on-click": "activate"
+    },
+
+    "wlr/taskbar": {
+        "format": "{}",
+        "all-workspaces": false,
+        "tooltip-format": "{}",
+        "on-click": "activate",
+        "on-click-middle": "close",
+        "icon-theme": "Papirus",
+        "ignore-list": ["plasmashell", "krunner", "latte-dock"]
+    },
+
+    "filesystem": {
+        "path": "/",
+        "format": " {percentage_used}%"
+    },
+
+    "pulseaudio": {
+        "format": " {volume}%",
+        "format-muted": " muted"
+    },
+
+    "hyprland/keyboard-state": {
+        "numlock": true,
+        "capslock": true,
+        "format": " {name} {icon}",
+        "format-icons": {
+            "locked": "",
+            "unlocked": ""
+        }
+    },
+
+    "memory": {
+        "interval": 5,
+        "format": " {percentage}%"
+    },
+
+    "cpu": {
+        "interval": 2,
+        "format": "󰻠 {usage}%"
+    },
+
+    "clock": {
+        "interval": 1,
+	"format": " {:%d-%m %H:%M}  "
+    },
+
+    "tray": {
+        "icon-size": 16,
+        "spacing": 5
+    }
+}
